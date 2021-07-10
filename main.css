@@ -36,10 +36,10 @@ h3 {
   margin: 0;
   font-weight: normal;
 }
-@font-face { 
-   font-family: "SFSpeedway"; 
-    src: local("SF Speedwaystar Condensed"), url("nineparchments.ttf");
-    format("truetype");
+@font-face {
+   font-family: "SFSpeedway";
+    src: local("SF Speedwaystar Condensed"),
+         url("https://cdn.jsdelivr.net/gh/DgINC/nineparchments-font@master/nineparchments.ttf") format("truetype");
 }
 em {
   font-style: normal;
@@ -282,7 +282,7 @@ body.choicePage .wrapper {
   bottom: 0;
   right: 0;
   padding: 0 2px;
-  background: url("icons/points_overlay.png") transparent;
+  text-shadow: 0 0 4px black, 0 0 6px rgb(0, 0, 0, .9);
   color: white;
 }
 

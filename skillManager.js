@@ -95,7 +95,7 @@ function updateTree(treeHandle) {
 			$(this).children("div.points").html(
 				p + "/" + m
 			);
-			$(this).children("div.points").css("visibility", (totalPoints < 5 * tierLevel) ? "hidden" : "visible");
+			$(this).children("div.points").toggleClass("active", !(totalPoints < 5 * tierLevel));
 			$(this).removeClass("partial full");
 			if (p != 0) {
 				$(this).addClass(p < m ? "partial" : "full");
@@ -106,7 +106,7 @@ function updateTree(treeHandle) {
 				var base = parseFloat($(this).attr("data-base"));
 				var sum = Math.round((Math.max(p,1) * base + mod)*100)/100; //Math.round to eliminate goofy float errors
 				var plus = ($(this).attr("data-base").substring(0,1) === "+" ? "+" : "");
-				$(this).html((sum > 0 ? plus : (sum == 0 ? "" : "-")) + sum);
+				$(this).html((sum > 0 ? plus : "") + sum);
 			});
 		});
 		$(this).attr("data-total", tierTotal);

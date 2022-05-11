@@ -3,7 +3,10 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
+*, *:before, *:after { box-sizing: inherit; }
 
 html {
   overflow-y: scroll;
@@ -119,7 +122,7 @@ body.choicePage .wrapper {
 .treeCollection {
   text-align: center;
   width: 741px;
-  height: 396px;
+  height: 420px;
   margin: 20px auto 30px auto;
   position: relative;
   z-index: 20;
@@ -139,7 +142,7 @@ body.choicePage .wrapper {
 .tree {
   width: 174px;
   text-align: center;
-  margin: 20px auto 0;
+  margin: 15px auto 0;
 }
 
 .bglayer {
@@ -260,9 +263,8 @@ body.choicePage .wrapper {
 
 .skill {
   padding: 3px;
-  margin-bottom: 10%;
-  width: 52px;
-  height: 53px;
+  margin-bottom: 20.5px;
+  height: 58px;
   cursor: pointer;
   position: relative;
   float: left;
@@ -270,11 +272,11 @@ body.choicePage .wrapper {
 
 .skill>img {
   width: 52px;
-  height: 53px;
+  height: 52px;
 }
 
 .points {
-  visibility: hidden;
+  opacity: 0.5;
   position: absolute;
   width: 35px;
   height: 21px;
@@ -282,8 +284,13 @@ body.choicePage .wrapper {
   bottom: 0;
   right: 0;
   padding: 0 2px;
-  text-shadow: 0 0 4px black, 0 0 6px rgb(0, 0, 0, .9);
+  color: #999;
+}
+
+.points.active {
+  opacity: 1;
   color: white;
+  text-shadow: 0 0 4px black, 0 0 6px rgb(0, 0, 0, .9);
 }
 
 .skill.partial .points {
@@ -334,7 +341,7 @@ legend {
   display: none;
   position: absolute;
   top: 0;
-  width: 200px;
+  width: 210px;
   z-index: 20;
   background-color: #111;
   color: white;
